@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="716.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminDashboardController">
+   <children>
+      <BorderPane layoutX="223.0" layoutY="213.0" prefHeight="716.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+         <left>
+            <AnchorPane prefHeight="716.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="716.0" prefWidth="200.0" style="-fx-background-color: purple;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="716.0" prefWidth="200.0" style="-fx-background-color: #800d78;" stylesheets="@../Css/Style.css">
+                           <children>
+                              <Line endX="60.5" layoutX="120.0" layoutY="160.0" startX="-100.0" stroke="WHITE" />
+                              <Button fx:id="btnArtistList" layoutX="26.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleArtistAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text=" Artists" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="MICROPHONE" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="btnRoom" layoutX="26.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleRoomAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text=" Room" textFill="#fffeff">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="TRELLO" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="btnReport" layoutX="26.0" layoutY="505.0" mnemonicParsing="false" onAction="#handleReportAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text=" Reports" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="btnLogOut" layoutX="26.0" layoutY="633.0" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="45.0" prefWidth="149.0" stylesheets="@../Css/Style.css" text=" Logout" textFill="WHITE">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="25" />
+                                 </graphic>
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="btnSongLIsts" layoutX="26.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSongLIstAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text="   Songs" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="MUSIC" size="25" text="" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="btnAlbumList" layoutX="26.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleAlbumList" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text=" Album" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="FOLDER_OPEN" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <ImageView fitHeight="500.0" fitWidth="102.0" layoutX="50.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image_Video/photo_2025-08-05_14-21-34.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btnStaffAddPane" layoutX="26.0" layoutY="441.0" mnemonicParsing="false" onAction="#handleStaffAddPaneAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text="    User" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USER" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                              <Label fx:id="lb_adminName" alignment="CENTER" layoutX="23.0" layoutY="122.0" prefHeight="27.0" prefWidth="160.0" text="Name" textAlignment="CENTER" textFill="#f5f6f8" AnchorPane.rightAnchor="17.0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnSetting" layoutX="26.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleSettingAction" prefHeight="45.0" prefWidth="150.0" stylesheets="@../Css/Style.css" text="  Setting" textFill="WHITE">
+                                 <font>
+                                    <Font name="Georgia Bold" size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="25" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="btn_home" />
+                                    <String fx:value="btn_bg_color" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="716.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="staffAddPane" prefHeight="716.0" prefWidth="900.0" style="-fx-background-color: #e0bef6;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="userTable" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                           <columns>
+                              <TableColumn fx:id="colUserName" prefWidth="253.66665649414062" text="User Name" />
+                              <TableColumn fx:id="colRole" prefWidth="242.33334350585938" text="Role" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="btnStaffAdd" layoutX="550.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleStaffAddAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: green;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnStaffDelete" layoutX="619.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleStaffDeleteAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <AnchorPane id="AnchorPane" fx:id="uploadStaffPane" layoutX="231.0" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="538.0" prefWidth="413.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="13.0" layoutY="88.0" prefHeight="369.0" prefWidth="415.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="77.66665649414062" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="123.66668701171875" minHeight="0.0" prefHeight="86.33334350585938" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="135.0" minHeight="0.0" prefHeight="89.66665649414062" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="26.0" prefWidth="137.0" text="User Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="29.0" prefWidth="135.0" text="User Password" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Role" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txtUserName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <PasswordField fx:id="txtUserPsw" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="comboRole" prefHeight="25.0" prefWidth="372.0" promptText="Please choose the role" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                                    <Label fx:id="lb_warning" alignment="BOTTOM_LEFT" prefHeight="18.0" prefWidth="292.0" text="***Warning : The password must be at least 8 characters long" textFill="RED" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Georgia" size="10.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets top="60.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="btnStaffBack" layoutX="194.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleStaffBackAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="btnStaffSave" layoutX="290.0" layoutY="464.0" mnemonicParsing="false" onAction="#handleStaffSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="156.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <Button fx:id="btnStaffEdit" layoutX="699.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleStaffEditAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: purple;" text="Edit" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <AnchorPane id="AnchorPane" fx:id="EditStaffPane" layoutX="234.0" layoutY="140.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="538.0" prefWidth="413.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="-4.0" layoutY="88.0" prefHeight="222.0" prefWidth="432.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="77.66665649414062" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="135.0" minHeight="0.0" prefHeight="89.66665649414062" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="26.0" prefWidth="137.0" text="User Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Role" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="edit_txtUserName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <ComboBox fx:id="edit_comboRole" prefHeight="25.0" prefWidth="372.0" promptText="Please choose the role" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="edit_btnStaffBack" layoutX="194.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleEditStaffBackAction" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="edit_btnStaffSave" layoutX="290.0" layoutY="464.0" mnemonicParsing="false" onAction="#handleEditStaffSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="141.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="artistListPane" prefHeight="716.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="txt_artistsearch" layoutX="375.0" layoutY="26.0" onAction="#handleArtistSearchAction" prefHeight="38.0" prefWidth="200.0" promptText="Search your like" />
+                        <GridPane fx:id="artistGrid" hgap="10.0" layoutX="71.0" layoutY="121.0" prefHeight="435.0" prefWidth="779.0" vgap="80.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <StackPane fx:id="pane1" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist1" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane2" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist2" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane3" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist3" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane4" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="3">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist4" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist4" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane5" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist5" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist5" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane6" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist6" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist6" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane7" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist7" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist7" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane8" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist8" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist8" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane9" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist9" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist9" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane10" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist10" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist10" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane11" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist11" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="pane12" prefHeight="150.0" prefWidth="200.0" stylesheets="@../Css/Style.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="ad_img_artist12" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="ad_lb_artist12" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="btnAdd" layoutX="669.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: green;" text="ADD" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnRemove" layoutX="740.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefWidth="70.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <ComboBox fx:id="comboCategoryArtist" layoutX="146.0" layoutY="26.0" prefHeight="38.0" prefWidth="200.0" promptText="All" style="-fx-background-color: white;" />
+                        <Button fx:id="btnRefreshArtist" layoutX="575.0" layoutY="26.0" mnemonicParsing="false" onAction="#RefreshArtist" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: black;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="REFRESH">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#3280fd" />
+                                          <Stop color="#0f60db" offset="0.007662835249042145" />
+                                          <Stop color="#e404b0" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="30.0" layoutY="31.0" text="Category :">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnArtistEdit" layoutX="822.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleArtistEditAction" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: red;" text="Edit" textFill="WHITE">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <HBox alignment="CENTER" prefHeight="39.0" prefWidth="220.0" spacing="10.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+                           <children>
+                              <Button fx:id="btnpevArtist" mnemonicParsing="false" onAction="#handlePevArtistAction" style="-fx-background-color: black;" text="&lt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                              <Label fx:id="lbartistPagelabel" text="Page Label" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnNextArtist" mnemonicParsing="false" onAction="#handleNextArtistAction" style="-fx-background-color: black;" text="&gt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <AnchorPane id="AnchorPane" fx:id="editArtistPane" layoutX="234.0" layoutY="60.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="50.0" layoutY="114.0" prefHeight="399.0" prefWidth="378.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="106.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="214.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Artist Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Gender" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Country" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="edit_imgView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="edit_txtArtistName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="edit_txtCountry" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="edit_btnUpload" mnemonicParsing="false" onAction="#handleEditUploadAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill></Button>
+                                    <ComboBox fx:id="combo_edit_txtGender" prefHeight="31.0" prefWidth="265.0" promptText="Choose Gender" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="edit_btnBack" layoutX="123.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleEditBackAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="edit_btnSave" layoutX="211.0" layoutY="532.0" mnemonicParsing="false" onAction="#handelEditSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="130.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane id="AnchorPane" fx:id="uploadArtistPane" layoutX="235.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="50.0" layoutY="114.0" prefHeight="399.0" prefWidth="378.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="106.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="214.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Artist Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Gender" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Country" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imgView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtArtistName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="txtCountry" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="btnUpload" mnemonicParsing="false" onAction="#handleUploadAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill></Button>
+                                    <ComboBox fx:id="combo_txtGender" prefHeight="30.0" prefWidth="253.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="btnBack" layoutX="123.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="btnSave" layoutX="211.0" layoutY="532.0" mnemonicParsing="false" onAction="#handelSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="130.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="albumPane" prefHeight="716.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnAlbEdit" layoutX="806.0" layoutY="28.0" mnemonicParsing="false" onAction="#handleAlbEditAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: red;" text="Edit" textFill="WHITE">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="txt_albumsearch" layoutX="350.0" layoutY="26.0" onAction="#handleAlbumSearchAction" prefHeight="38.0" prefWidth="200.0" promptText="Search your like" />
+                        <GridPane fx:id="albumGrid" hgap="10.0" layoutX="71.0" layoutY="121.0" prefHeight="435.0" prefWidth="779.0" vgap="80.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <StackPane fx:id="albpane1" prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist1" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane2" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist2" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane3" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist3" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane4" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist4" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist4" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane5" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist5" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist5" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane6" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist6" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist6" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane7" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist7" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist7" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane8" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist8" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist8" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane9" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist9" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist9" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane10" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist10" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist10" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane11" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist11" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="albpane12" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="alb_img_artist12" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="alb_lb_artist12" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="btnAlbAdd" layoutX="643.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleAlbAddAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: green;" text="ADD" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnAlbRemove" layoutX="720.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleAlbRemoveAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="42.0" layoutY="33.0" text="Category :">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboCategoryAlbum" layoutX="130.0" layoutY="27.0" prefHeight="38.0" prefWidth="200.0" promptText="All" style="-fx-background-color: white;" />
+                        <Button fx:id="btnRefreshAlbum" layoutX="550.0" layoutY="26.0" mnemonicParsing="false" onAction="#RefreshAlbum" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: black;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="REFRESH">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#3280fd" />
+                                          <Stop color="#0f60db" offset="0.007662835249042145" />
+                                          <Stop color="#e404b0" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <HBox alignment="CENTER" prefHeight="39.0" prefWidth="220.0" spacing="10.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+                           <children>
+                              <Button fx:id="btnAllbpevArtist" mnemonicParsing="false" onAction="#handleAlbPevArtistAction" style="-fx-background-color: black;" text="&lt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                              <Label fx:id="lbAlbartistPagelabel" text="Page Label">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAlbNextArtist" mnemonicParsing="false" onAction="#handleAlbNextArtistAction" style="-fx-background-color: black;" text="&gt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <AnchorPane id="AnchorPane" fx:id="uploadAlbPane" layoutX="232.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="50.0" layoutY="114.0" prefHeight="406.0" prefWidth="378.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="214.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Album Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imgAlbView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtAlbArtistName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="btnAlbUpload" mnemonicParsing="false" onAction="#handleAlbUploadAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill></Button>
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="btnAlbBack" layoutX="123.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleAlbBackAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="btnAlbSave" layoutX="211.0" layoutY="532.0" mnemonicParsing="false" onAction="#handelAlbSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="130.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane id="AnchorPane" fx:id="editAlbPane" layoutX="225.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="340.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="50.0" layoutY="114.0" prefHeight="406.0" prefWidth="378.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="214.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="Album Name">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="edit_imgAlbView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txt_editAlbArtistName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="edit_btnAlbUpload" mnemonicParsing="false" onAction="#handleEditAlbUploadAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill></Button>
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="edit_btnAlbBack" layoutX="123.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleEditAlbBackAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="edit_btnAlbSave" layoutX="211.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleEditAlbSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="130.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  
+                  <AnchorPane fx:id="ReportPane" prefHeight="716.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="9.0" layoutY="10.0" prefHeight="200.0" prefWidth="900.0" stylesheets="@../Css/Style.css" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
+                           <styleClass>
+                              <String fx:value="white_bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="574.0" layoutY="20.0" prefHeight="156.0" prefWidth="270.0" styleClass="card" stylesheets="@../Css/Style.css">
+                                 <children>
+                                    <Label fx:id="selectedMonthLabel" layoutX="7.0" layoutY="15.0" prefHeight="29.0" prefWidth="141.0" text="SEPTEMBER">
+                                       <font>
+                                          <Font name="Georgia Bold" size="15.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <Label layoutX="172.0" layoutY="15.0" prefHeight="29.0" prefWidth="84.0" text="INCOME">
+                                       <font>
+                                          <Font name="Georgia Bold" size="15.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <Label fx:id="incomeLabel" alignment="CENTER" layoutX="19.0" layoutY="50.0" prefHeight="46.0" prefWidth="235.0" text=" 0.0 Ks" textAlignment="CENTER" textFill="#c2d2f8">
+                                       <font>
+                                          <Font name="Calibri Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIcon fill="#c2d2f8" glyphName="MONEY" layoutX="116.0" layoutY="132.0" size="3EM" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="224.0" layoutY="20.0" prefHeight="152.0" prefWidth="291.0" styleClass="card" stylesheets="@../Css/Style.css">
+                                 <children>
+                                    <Label fx:id="selectedMonthLabel1" layoutX="72.0" layoutY="6.0" prefHeight="29.0" prefWidth="161.0" text="Details Income">
+                                       <font>
+                                          <Font name="Georgia Bold" size="18.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <Label fx:id="selectedMonthLabel11" layoutX="14.0" layoutY="42.0" prefHeight="29.0" prefWidth="103.0" text="🥇 VIP Room" textFill="#ed1414">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="vipincomeLabel" layoutX="170.0" layoutY="42.0" prefHeight="29.0" prefWidth="120.0" text="\$ 500,000" textFill="#c2d2f8">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="selectedMonthLabel112" layoutX="14.0" layoutY="77.0" prefHeight="29.0" prefWidth="131.0" text="🥈 Medium Room" textFill="#f47906">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="selectedMonthLabel1121" layoutX="14.0" layoutY="117.0" prefHeight="29.0" prefWidth="121.0" text=" 🥉 Small Room" textFill="#f4e806">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="mediumincomeLabel" layoutX="170.0" layoutY="78.0" prefHeight="29.0" prefWidth="121.0" text="\$ 240,000" textFill="#c2d2f8">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="smallincomeLabel" layoutX="170.0" layoutY="117.0" prefHeight="29.0" prefWidth="118.0" text="\$ 125,000" textFill="#c2d2f8">
+                                       <font>
+                                          <Font name="Georgia Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <ComboBox fx:id="Monthcombox" layoutX="33.0" layoutY="85.0" prefWidth="150.0" promptText="Choose Month" style="-fx-background-color: lightgray;" styleClass="border_radius" stylesheets="@../Css/Style.css" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="15.0" layoutY="217.0" prefHeight="496.0" prefWidth="902.0" stylesheets="@../Css/Style.css" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white_bg" />
+                           </styleClass>
+                           <children>
+                              <LineChart fx:id="progressChart" layoutX="485.0" layoutY="20.0" maxHeight="460.0" maxWidth="500.0" minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="400.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </LineChart>
+                              <BarChart fx:id="MonthlyBarChart" layoutX="15.0" layoutY="20.0" prefHeight="460.0" prefWidth="460.0">
+                                 <xAxis>
+                                    <CategoryAxis label="Week of the Month" side="BOTTOM" fx:id="xAxis" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis fx:id="yAxis" label="Sales Amount($)" side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                  
+                  <AnchorPane fx:id="songListPane" prefHeight="716.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="txt_songsearch" layoutX="302.0" layoutY="26.0" onAction="#handleSongSearchAction" prefHeight="38.0" prefWidth="200.0" promptText="Search your like" />
+                        <GridPane fx:id="songGrid" hgap="10.0" layoutX="71.0" layoutY="121.0" prefHeight="435.0" prefWidth="779.0" vgap="80.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <StackPane fx:id="sopane1" prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist1" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane2" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist2" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane3" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist3" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane4" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist4" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist4" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane5" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist5" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist5" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane6" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist6" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist6" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane7" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist7" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist7" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane8" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist8" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist8" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane9" prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist9" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist9" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane10" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist10" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist10" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane11" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist11" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist11" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="sopane12" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <children>
+                                    <ImageView fx:id="so_img_artist12" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                                    <Label fx:id="so_lb_artist12" alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: white;" text="Label" StackPane.alignment="BOTTOM_CENTER">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <StackPane.margin>
+                                          <Insets />
+                                       </StackPane.margin>
+                                    </Label>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="btnSongAdd" layoutX="629.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleSongAddAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: green;" text="ADD" textFill="WHITE">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSongRemove" layoutX="704.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleRemoveSongAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <ComboBox fx:id="comboCategorySong" layoutX="89.0" layoutY="26.0" prefHeight="38.0" prefWidth="200.0" promptText="All" style="-fx-background-color: white;" />
+                        <Button fx:id="btnRefreshSong" layoutX="502.0" layoutY="26.0" mnemonicParsing="false" onAction="#RefreshSong" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: black;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="REFRESH">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#3280fd" />
+                                          <Stop color="#0f60db" offset="0.007662835249042145" />
+                                          <Stop color="#e404b0" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Label layoutX="2.0" layoutY="31.0" text="Category :">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSongEdit" layoutX="790.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleEditSongAction" prefHeight="30.0" prefWidth="60.0" style="-fx-background-color: red;" text="Edit" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <HBox alignment="CENTER" prefHeight="39.0" prefWidth="220.0" spacing="10.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+                           <children>
+                              <Button fx:id="btnpevSong" mnemonicParsing="false" onAction="#handlePevSongAction" style="-fx-background-color: black;" text="&lt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                              <Label fx:id="lbSongPagelabel" text="Page Label" textFill="#0b0000">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnNextSong" mnemonicParsing="false" onAction="#handleNextSongAction" style="-fx-background-color: black;" text="&gt;">
+                                 <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="0.4666666666666667" endY="0.7047618911379859" startX="1.0">
+                                       <stops>
+                                          <Stop color="#5e95ed" />
+                                          <Stop color="#f869ec" offset="0.9974457215836525" />
+                                          <Stop color="#f869ec" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <AnchorPane id="AnchorPane" fx:id="editSongPane" layoutX="229.0" layoutY="60.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="633.0" prefWidth="412.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false" AnchorPane.leftAnchor="229.0" AnchorPane.topAnchor="60.0">
+                           <children>
+                              <GridPane layoutX="13.0" layoutY="93.0" prefHeight="459.0" prefWidth="415.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="54.666656494140625" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="93.0" minHeight="0.0" prefHeight="47.33332824707031" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="112.00001525878906" minHeight="0.0" prefHeight="53.33331298828125" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="56.666656494140625" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="264.33331298828125" minHeight="10.0" prefHeight="143.33334350585938" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="55.66668701171875" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="55.66668701171875" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <ComboBox fx:id="edit_txtSongCategory" prefHeight="25.0" prefWidth="292.0" promptText="Choose Album" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                                    <Label alignment="CENTER" prefHeight="26.0" prefWidth="137.0" text="Song Name" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="29.0" prefWidth="135.0" text="Artist Name" textFill="WHITE" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Album Name" textFill="WHITE" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" textFill="WHITE" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="edit_imgSongView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="edit_txtSongName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="edit_btnUploadSongImg" alignment="CENTER" mnemonicParsing="false" onAction="#handleEditUploadSongImgAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="136.0" text="Category" textFill="WHITE" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="66.0" prefWidth="130.0" text="Instru Path" textAlignment="JUSTIFY" textFill="WHITE" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="136.0" text="Song Path" textFill="WHITE" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="edit_btnUploadSongPath" alignment="CENTER" mnemonicParsing="false" onAction="#handleEditUploadSongPathAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <TextField fx:id="edit_txt_songPath" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="edit_txt_instuPath" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Button fx:id="edit_btnUploadSongInstuPath" alignment="CENTER" mnemonicParsing="false" onAction="#handleEditUploadSongInstuPathAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#59d7eb" />
+                                                <Stop color="#e965ce" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <ComboBox fx:id="edit_comboArtist" prefHeight="25.0" prefWidth="347.0" promptText="Choose Artist Name" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="edit_comboAlbum" prefHeight="25.0" prefWidth="347.0" promptText="Choose Album Name" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="edit_btnSongBack" layoutX="115.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleEditSongBackAction" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="edit_btnSongSave" layoutX="209.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleEditSongSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#59d7eb" />
+                                          <Stop color="#e965ce" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="156.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane id="AnchorPane" fx:id="uploadSongPane" layoutX="236.0" layoutY="57.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="633.0" prefWidth="412.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false">
+                           <children>
+                              <GridPane layoutX="13.0" layoutY="93.0" prefHeight="459.0" prefWidth="415.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.0" minWidth="10.0" prefWidth="125.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="164.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="89.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="54.666656494140625" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="93.0" minHeight="0.0" prefHeight="47.33332824707031" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="112.00001525878906" minHeight="0.0" prefHeight="53.33331298828125" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="56.666656494140625" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="264.33331298828125" minHeight="10.0" prefHeight="143.33334350585938" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="55.66668701171875" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="55.66668701171875" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="26.0" prefWidth="137.0" text="Song Name" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="29.0" prefWidth="135.0" text="Artist Name" textFill="WHITE" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="140.0" text="Album Name" textFill="WHITE" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" text="image" textFill="WHITE" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="imgSongView" fitHeight="156.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <TextField fx:id="txtSongName" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Button fx:id="btnUploadSongImg" alignment="CENTER" mnemonicParsing="false" onAction="#handleUploadSongImgAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#63dffb" />
+                                                <Stop color="#ff4fd6" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="136.0" text="Category" textFill="WHITE" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="108.0" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="66.0" prefWidth="130.0" text="Instru Path" textAlignment="JUSTIFY" textFill="WHITE" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="136.0" text="Song Path" textFill="WHITE" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font name="System Bold Italic" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="btnUploadSongPath" alignment="CENTER" mnemonicParsing="false" onAction="#handleUploadSongPathAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#63dffb" />
+                                                <Stop color="#ff4fd6" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <TextField fx:id="txt_songPath" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txt_instuPath" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Button fx:id="btnUploadSongInstuPath" alignment="CENTER" mnemonicParsing="false" onAction="#handleUploadSongInstuPathAction" style="-fx-background-color: black;" text="Upload" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0">
+                                             <stops>
+                                                <Stop color="#63dffb" />
+                                                <Stop color="#ff4fd6" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Button>
+                                    <ComboBox fx:id="comboArtist" prefHeight="25.0" prefWidth="347.0" promptText="Choose Artist Name" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="comboAlbum" prefHeight="25.0" prefWidth="347.0" promptText="Choose Album Name" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                                    <ComboBox fx:id="txtSongCategory" prefHeight="25.0" prefWidth="297.0" promptText="Choose Category" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="btnSongBack" layoutX="115.0" layoutY="560.0" mnemonicParsing="false" onAction="#handleSongBackAction" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: black;" text="Back" AnchorPane.leftAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#63dffb" />
+                                          <Stop color="#ff4fd6" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Button fx:id="btnSongSave" layoutX="209.0" layoutY="559.0" mnemonicParsing="false" onAction="#handleSongSaveAction" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: black;" text="Save" AnchorPane.rightAnchor="150.0">
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#63dffb" />
+                                          <Stop color="#ff4fd6" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill></Button>
+                              <Text layoutX="145.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="♪RhythmX">
+                                 <font>
+                                    <Font name="Georgia" size="36.0" />
+                                 </font>
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#c7a4c9" />
+                                          <Stop color="WHITE" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="RoomPane" prefHeight="716.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutY="100.0" prefHeight="603.0" prefWidth="200.0" stylesheets="@../Css/Style.css">
+                           <children>
+                              <Line endX="112.0" layoutX="130.0" layoutY="183.0" startX="-98.0" />
+                              <Button fx:id="btnRoom2" layoutX="149.0" layoutY="20.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/crown.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom1" layoutX="59.0" layoutY="20.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/crown.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom4" layoutX="149.0" layoutY="94.0" minHeight="0.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/crown.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="80.0" layoutY="74.0" text="Vip_1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="166.0" layoutY="74.0" text="Vip_2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="70.0" layoutY="149.0" text="Vip_3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="164.0" layoutY="149.0" text="Vip_4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnRoom6" layoutX="150.0" layoutY="194.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom5" layoutX="54.0" layoutY="192.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom8" layoutX="149.0" layoutY="274.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom7" layoutX="53.0" layoutY="274.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="47.0" layoutY="242.0" text="MRoom_1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="242.0" text="MRoom_2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="49.0" layoutY="329.0" text="MRoom_3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="140.0" layoutY="329.0" text="MRoom_4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="112.0" layoutX="129.0" layoutY="363.0" startX="-101.66665649414062" />
+                              <Button fx:id="btnRoom10" layoutX="150.0" layoutY="386.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom9" layoutX="61.0" layoutY="386.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom12" layoutX="149.0" layoutY="462.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRoom11" layoutX="60.0" layoutY="462.0" minHeight="50.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/door.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="53.0" layoutY="434.0" text="SRoom_1">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="143.0" layoutY="434.0" text="SRoom_2">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="56.0" layoutY="514.0" text="SRoom_3">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="514.0" text="SRoom_4">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="61.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Image_Video/crown.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btnRoom3" layoutX="59.0" layoutY="96.0" minHeight="0.0" mnemonicParsing="false" prefWidth="50.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image_Video/crown.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <TableView fx:id="tbRoomDetail" prefHeight="492.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
+                           <columns>
+                              <TableColumn fx:id="col_roomtype" prefWidth="75.0" text="Room Type" />
+                              <TableColumn fx:id="col_roomStatus" prefWidth="103.0" text="Status" />
+                              <TableColumn fx:id="col_customer" prefWidth="77.0" text="Customer" />
+                              <TableColumn fx:id="col_phone" prefWidth="74.0" text="Phone" />
+                              <TableColumn fx:id="col_staff" prefWidth="89.0" text="Staff_id" />
+                              <TableColumn fx:id="col_statTime" prefWidth="85.0" text="StartTime" />
+                              <TableColumn fx:id="col_endTime" prefWidth="85.0" text="End time" />
+                              <TableColumn fx:id="col_total" prefWidth="85.0" text="Total" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <AnchorPane fx:id="bookingacceptPane" layoutX="209.0" layoutY="142.0" prefHeight="416.0" prefWidth="500.0" style="-fx-background-color: black;" visible="false">
+                           <children>
+                              <Label fx:id="lb_customer" layoutX="50.0" layoutY="50.0" text="CustomerName" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_phonenumber" layoutX="50.0" layoutY="100.0" text="PhoneNumber" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_date" layoutX="50.0" layoutY="150.0" text="Date" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_startTime" layoutX="50.0" layoutY="200.0" text="StartTime" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_endTime" layoutX="50.0" layoutY="250.0" text="EndTime" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txt_customer" layoutX="210.0" layoutY="42.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px;" />
+                              <TextField fx:id="txt_phone" layoutX="210.0" layoutY="94.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px;" />
+                              <DatePicker fx:id="txt_date" layoutX="210.0" layoutY="145.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px;" />
+                              <Label fx:id="lb_status" layoutX="50.0" layoutY="300.0" text="Status" textFill="GOLD">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboStatus" layoutX="210.0" layoutY="298.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px; -fx-background-color: white;" />
+                              <Button fx:id="btn_roomSave" layoutX="285.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleRoomSaveAction" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #6cff47;" text="Save">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SAVE" size="1.3em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btn_roomback" layoutX="130.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleRoomBackAction" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: #ff6347;" text="Back">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="ARROW_LEFT" />
+                                 </graphic>
+                              </Button>
+                              <ComboBox fx:id="comboStartTime" layoutX="210.0" layoutY="196.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px; -fx-background-color: white;" />
+                              <ComboBox fx:id="comboEndTime" layoutX="210.0" layoutY="245.0" prefHeight="34.0" prefWidth="200.0" style="-fx-background-radius: 10px; -fx-background-color: white;" />
+                           </children>
+                           <effect>
+                              <DropShadow color="#f5ea84" height="45.71" radius="19.1425" width="32.86" />
+                           </effect>
+                        </AnchorPane>
+                        <Label layoutX="30.0" layoutY="60.0" text="Booked">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="98.0" layoutY="60.0" text="Available">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="184.0" layoutY="60.0" text="Using">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Circle fill="TOMATO" layoutX="51.0" layoutY="37.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="MEDIUMSEAGREEN" layoutX="128.0" layoutY="36.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="GOLD" layoutX="200.0" layoutY="36.0" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                        <TextField fx:id="txtSearchBooking" layoutX="363.0" layoutY="25.0" onAction="#SearchBooking" prefHeight="38.0" prefWidth="193.0" />
+                        <Button fx:id="btnRefeshBooking" layoutX="556.0" layoutY="25.0" mnemonicParsing="false" onAction="#RefreshBooking" prefHeight="35.0" prefWidth="37.0" style="-fx-background-color: black;">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon glyphName="REFRESH">
+                                 <fill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop color="#3280fd" />
+                                          <Stop color="#0f60db" offset="0.007662835249042145" />
+                                          <Stop color="#e404b0" offset="1.0" />
+                                       </stops>
+                                    </LinearGradient>
+                                 </fill>
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
+                              </FontAwesomeIcon>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnDeleteBooking" layoutX="627.0" layoutY="25.0" mnemonicParsing="false" onAction="#BookingDelete" prefHeight="34.0" prefWidth="69.0" style="-fx-background-color: red;" text="Delete" textFill="#fbf6f6">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="adminSettingPane" prefHeight="716.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom,#fa55e7,#bb05f7,#5a007d);" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <BorderPane layoutX="192.0" layoutY="95.0" prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <AnchorPane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="lb_setting" layoutX="70.0" layoutY="29.0" text="Setting">
+                                       <font>
+                                          <Font name="Georgia Bold" size="24.0" />
+                                       </font>
+                                       <textFill>
+                                          <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.09841264997209821">
+                                             <stops>
+                                                <Stop color="#52a5ed" />
+                                                <Stop color="#770477" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </textFill>
+                                    </Label>
+                                    <FontAwesomeIcon fx:id="settingsIcon2" glyphName="GEAR" layoutX="33.0" layoutY="53.0" size="2.5em">
+                                       <fill>
+                                          <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.09841264997209821">
+                                             <stops>
+                                                <Stop color="#2392ed" />
+                                                <Stop color="#520357" offset="1.0" />
+                                             </stops>
+                                          </LinearGradient>
+                                       </fill></FontAwesomeIcon>
+                                 </children>
+                              </AnchorPane>
+                           </top>
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <AnchorPane prefHeight="80.0" prefWidth="200.0" styleClass="setting_admin_bg" stylesheets="@../Css/Style.css">
+                                       <children>
+                                          <FontAwesomeIcon fx:id="edit_icon2" glyphName="PENCIL" layoutX="57.0" layoutY="47.0" size="1.8em">
+                                             <fill>
+                                                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.09841264997209821">
+                                                   <stops>
+                                                      <Stop color="#52a5ed" />
+                                                      <Stop color="#600167" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </fill>
+                                          </FontAwesomeIcon>
+                                          <Label fx:id="lb_changePassword" layoutX="105.0" layoutY="29.0" text="Change Password">
+                                             <font>
+                                                <Font name="Georgia" size="18.0" />
+                                             </font>
+                                             <textFill>
+                                                <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.09841264997209821">
+                                                   <stops>
+                                                      <Stop color="#2392ed" />
+                                                      <Stop color="#520357" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Label>
+                                          <Button fx:id="btn_changePassword" layoutX="360.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleChangePasswordAction" style="-fx-background-color: linear-gradient(to top,#4c76ff,#ba4efc,#f454ff);" text="&gt;" textFill="#120012">
+                                             <font>
+                                                <Font name="Georgia Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                     </children>
+                     <effect>
+                        <InnerShadow color="#760393" height="80.305" radius="54.478750000000005" width="139.61" />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

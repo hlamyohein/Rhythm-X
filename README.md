@@ -19,7 +19,6 @@ A desktop music streaming app built with JavaFX and NetBeans
 3. Run `Main.java`
 
 ## Author
-- School Project(Zuly Htet,Aye Aye Myat,Hla Myo Hein,Tint Phyo Paing,Aung Thant Zin,Zin Min Thant,Myat Aung Ko)
-
+- This is a school project written by 7 members
 ## License
 MIT
